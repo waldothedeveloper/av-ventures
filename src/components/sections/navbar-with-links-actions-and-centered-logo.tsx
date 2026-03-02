@@ -1,8 +1,12 @@
+"use client";
+
 import { ElDialog, ElDialogPanel } from "@tailwindplus/elements/react";
 import type { ComponentProps, ReactNode } from "react";
+import { useEffect } from "react";
 
 import { clsx } from "clsx/lite";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function NavbarLink({
   children,
@@ -67,10 +71,19 @@ export function NavbarWithLinksActionsAndCenteredLogo({
   logo: ReactNode;
   actions?: ReactNode;
 } & ComponentProps<"header">) {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const dialog = document.getElementById(
+      "mobile-menu",
+    ) as HTMLDialogElement | null;
+    dialog?.close();
+  }, [pathname]);
+
   return (
     <header
       className={clsx(
-        "sticky top-0 z-10 bg-olive-100 dark:bg-olive-950",
+        "sticky top-0 z-10 overflow-hidden bg-olive-100 dark:bg-olive-950",
         className,
       )}
       {...props}

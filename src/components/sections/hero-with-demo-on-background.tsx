@@ -37,7 +37,7 @@ export function HeroWithDemoOnBackground({
               </div>
               <div className="lg:pt-24">
                 <div className="relative h-72 sm:h-92 md:h-125 lg:size-full">
-                  <div className="absolute inset-y-0 left-0 flex w-screen overflow-hidden *:h-full *:w-auto *:max-w-none max-lg:rounded-t-lg lg:rounded-tl-lg">
+                  <div className="absolute inset-y-0 left-0 flex w-full overflow-hidden *:h-full *:w-auto *:max-w-none max-lg:rounded-t-lg lg:rounded-tl-lg">
                     {demo}
                   </div>
                 </div>

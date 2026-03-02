@@ -1,6 +1,5 @@
 import "./globals.css";
 
-import { CALENDLY_URL, WHATSAPP_URL, instagramURL } from "@/lib/av-content";
 import {
   FooterCategory,
   FooterLink,
@@ -12,16 +11,18 @@ import {
   NavbarLogo,
   NavbarWithLinksActionsAndCenteredLogo,
 } from "@/components/sections/navbar-with-links-actions-and-centered-logo";
+import { CALENDLY_URL, WHATSAPP_URL, instagramURL } from "@/lib/av-content";
 
-import { CalendarIcon } from "@/components/icons/calendar-icon";
-import Image from "next/image";
-import { MailIcon } from "@/components/icons/mail-icon";
 import { Main } from "@/components/elements/main";
+import { CalendarIcon } from "@/components/icons/calendar-icon";
+import { MailIcon } from "@/components/icons/mail-icon";
 import { MapPinIcon } from "@/components/icons/map-pin-icon";
-import type { Metadata } from "next";
 import { InstagramIcon } from "@/components/icons/social/instagram-icon";
 import { WhatsAppIcon } from "@/components/icons/social/whatsapp-icon";
-import logo from "@/images/av-logo.png";
+import logoDark from "@/images/logo-av-dark.svg";
+import logoLight from "@/images/logo-av-light.svg";
+import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "AV Ventures | Capital Financial | Consultoría Financiera en EE.UU.",
@@ -89,26 +90,25 @@ export default function RootLayout({
               <>
                 <NavbarLink href="/contact">Contacto</NavbarLink>
                 <NavbarLink href="/about">Acerca de Nosotros</NavbarLink>
-                <NavbarLink href="#" className="sm:hidden">
-                  Log in
-                </NavbarLink>
               </>
             }
             logo={
               <NavbarLogo href="/">
                 <Image
-                  src={logo}
+                  src={logoLight}
                   alt="AV Ventures"
-                  className="dark:hidden"
-                  width={110}
-                  height={65}
+                  className="dark:hidden w-24 h-auto lg:w-40"
+                  width={160}
+                  height={95}
+                  unoptimized
                 />
                 <Image
-                  src={logo}
+                  unoptimized
+                  src={logoDark}
                   alt="AV Ventures"
-                  className="not-dark:hidden"
-                  width={110}
-                  height={65}
+                  className="not-dark:hidden w-24 h-auto lg:w-40"
+                  width={160}
+                  height={95}
                 />
               </NavbarLogo>
             }
